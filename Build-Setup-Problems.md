@@ -1,5 +1,5 @@
 #Issue 1: repo not installed
-
+	
 	Solution: 
 	$ cd ~
 	$ mkdir bin
@@ -59,17 +59,14 @@
 	$ sudo apt install git
 
 
-#Issue 7: DTBS ERROR
-
-	Building device tree overlays
-	DTC     src/arm/BBAI_BB-BONE-FACE-8CH-00A0.dtbo
-	ERROR
+#Issue 7: DTBS ERROR Building device tree overlays
+	DTC     src/arm/BBAI_BB-BONE-FACE-8CH-00A0.dtbo ERROR
+	
 	Solution: Comment DT Overlays in line no 60 to 66 in "build-beagleboneblack.sh"
 
 
-#Issue 8: U-boot ERROR
-
-	/usr/include/libfdt_env.h:81:24: error: redefinition of ‘fdt16_to_cpu’ 
+#Issue 8: U-boot ERROR /usr/include/libfdt_env.h:81:24: error: redefinition of ‘fdt16_to_cpu’ 
+	
 	Ref link: https://github.com/crust-firmware/meta/issues/2
 
 	find -name 'libfdt*.h' -exec sed -i 's/ _LIBFDT_/ LIBFDT_/g' {} +
